@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { v4 } from "uuid";
-import Input from "./input";
+import Input from "./Input";
+import Button from "./Button";
 
 function AddTask({ onAddTaskSubmit }) {
   const [title, setTitle] = useState("");

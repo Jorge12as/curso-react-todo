@@ -34,9 +34,7 @@ function App() {
 
   // Função para alterar o estado da tarefa
   function onTaskClick(taskId) {
-
     const newTask = tasks.map((task) => {
-
       //PRECISO ATUALIZAR ESSA TAREFA
       if (task.id === taskId) {
         return { ...task, isCompleted: !task.isCompleted };
@@ -67,8 +65,7 @@ function App() {
 
   return (
     <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
-      <div className="w-\[500px] space-y-4">
-        
+      <div className="w-[500px] space-y-4">
         <Title>Gerenciador de Tarefas</Title>
 
         <AddTask onAddTaskSubmit={onAddTaskSubmit} />
