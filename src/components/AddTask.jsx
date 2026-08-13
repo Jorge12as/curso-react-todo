@@ -2,12 +2,14 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import Input from "./Input";
 
+
 function AddTask({ onAddTaskSubmit }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   return (
     <div className="space-y-4 p-6 bg-slate-400 rounded-md shadow flex flex-col">
+    
       <Input
         type="text"
         placeholder="Digite o título da tarefa"
@@ -45,5 +47,3 @@ AddTask.propTypes = {
 };
 
 export default AddTask;
-
-

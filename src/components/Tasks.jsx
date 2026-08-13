@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import PropTypes from "prop-types";
 
+
+
 function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
   const navigate = useNavigate();
 
@@ -15,6 +17,10 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
 
   return (
     <ul className="space-y-4 p-6 bg-slate-200 rounded-md shadow">
+      <h6 className="text-slate-600 text-center font-bold -translate-y-3">
+        Lista de Tarefas
+      </h6>
+      <hr className="-translate-3 text-slate-500 border-be-0" />
       {tasks.map((task) => (
         <li key={task.id} className="flex gap-2">
           <button
