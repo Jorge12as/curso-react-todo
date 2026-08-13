@@ -1,16 +1,16 @@
 import { ChevronRightIcon, Trash } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
+import PropTypes from "prop-types";
 
+function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
+  const navigate = useNavigate();
 
-function Tasks({tasks, onTaskClick, onDeleteTaskClick}) {
-  const navigate =useNavigate();
-  
-  function onSeeDetailsClick(task){
+  function onSeeDetailsClick(task) {
     const query = new URLSearchParams();
     query.set("title", task.title);
-    query.set("description", task.description)
-    navigate(`/task?${query.toString()}`)
+    query.set("description", task.description);
+    navigate(`/task?${query.toString()}`);
   }
 
   return (
@@ -25,8 +25,7 @@ function Tasks({tasks, onTaskClick, onDeleteTaskClick}) {
             {task.title}
           </button>
 
-          <Button 
-          onClick={() => onSeeDetailsClick(task)}>
+          <Button onClick={() => onSeeDetailsClick(task)}>
             <ChevronRightIcon />
           </Button>
 
@@ -43,26 +42,10 @@ function Tasks({tasks, onTaskClick, onDeleteTaskClick}) {
 }
 
 
-
-// function Tasks(props){
-//     return (
-
-//         <ul className="space-y-4 p-6 bg-slate-200 rotate-md shadow">
-
-//             {props.tasks.map((task) => (
-
-//                 <li key={task.id} className="flex gap-2">
-//                     <button className="bg-slate-400 w-full text-left text-white p-2 rounded-md">
-//                         {task.title}
-//                     </button>
-//                     <button className="bg-slate-400 p-2 rounded-md text-white">
-//                         <ChevronRightIcon />
-//                     </button>                    
-                    
-//                 </li>
-//             ))}            
-//         </ul>
-//     );
-// }
+Tasks.propTypes = {
+  tasks: PropTypes.array.isRequired,
+  onTaskClick: PropTypes.func.isRequired,
+  onDeleteTaskClick: PropTypes.func.isRequired,
+};
 
 export default Tasks;
