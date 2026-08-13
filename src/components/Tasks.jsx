@@ -19,7 +19,7 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
         <li key={task.id} className="flex gap-2">
           <button
             onClick={() => onTaskClick(task.id)}
-            className={`bg-slate-500 hover:bg-slate-600 flex text-left w-full text-gray-100 p-2 rounded-md
+            className={`bg-slate-500 hover:bg-slate-600 flex items-center gap-2 text-left w-full text-gray-100 p-2 rounded-md
                     ${task.isCompleted && "line-through"}`}
           >
             {task.isCompleted && <CheckIcon />}
@@ -41,7 +41,6 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
     </ul>
   );
 }
-
 
 Tasks.propTypes = {
   tasks: PropTypes.array.isRequired,
